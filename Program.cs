@@ -4,75 +4,92 @@
     {
         static void Main(string[] args)
         {
-            // Display menu options
-            Console.WriteLine("Please choose the number:");
-            Console.WriteLine("1: PrintNumbersFrom1To10");
-            Console.WriteLine("2: CountDownAndUp");
-            Console.WriteLine("3: CalculateSum");
-            Console.WriteLine("4: Fibonacci");
-
-            // Get user input
-            int userInput;
-            if (int.TryParse(Console.ReadLine(), out userInput))
+            while (true)
             {
-                switch (userInput)
+                // Display menu options
+                Console.WriteLine("Please choose the number:");
+                Console.WriteLine("1: PrintNumbersFrom1To10");
+                Console.WriteLine("2: CountDownAndUp");
+                Console.WriteLine("3: CalculateSum");
+                Console.WriteLine("4: Fibonacci");
+                Console.WriteLine("5: Exit the Application");
+
+                // Get user input
+                int userInput;
+                if (int.TryParse(Console.ReadLine(), out userInput))
                 {
-                    case 1:
+                    switch (userInput)
+                    {
+                        case 1:
 
-                        // Print numbers from 1 to 10 based on user input
-                        Console.WriteLine("Count to 10:");
-                        Console.WriteLine("Please enter a number.");
-                        int enteredNumber;
-                        if (int.TryParse(Console.ReadLine(), out enteredNumber))
-                        {
-                            Console.WriteLine($"print {enteredNumber} - 10:");
-                            PrintNumbersFrom1To10(enteredNumber);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Please enter the valid number.");
-                        }
-                        break;
-                    case 2:
+                            // Print numbers from 1 to 10 based on user input
+                            Console.WriteLine("Count to 10:");
+                            Console.WriteLine("Please enter a number.");
+                            int enteredNumber;
+                            if (int.TryParse(Console.ReadLine(), out enteredNumber))
+                            {
+                                Console.WriteLine($"print {enteredNumber} - 10:");
+                                PrintNumbersFrom1To10(enteredNumber);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please enter the valid number.");
+                            }
+                            break;
 
-                        // Count down and up based on user input
-                        Console.WriteLine("Count down and up:");
-                        Console.WriteLine("Please enter a number:");
-                        int enterNumber;
-                        if(int.TryParse(Console.ReadLine(),out enterNumber))
-                        {
-                            Console.WriteLine("Count Down:");
-                            CountDownAndUp(enterNumber);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Please enter a valid number.");
-                        }
+                        case 2:
 
-                        break;
-                    case 3:
+                            // Count down and up based on user input
+                            Console.WriteLine("Count down and up:");
+                            Console.WriteLine("Please enter a number:");
+                            int enterNumber;
+                            if (int.TryParse(Console.ReadLine(), out enterNumber))
+                            {
+                                Console.WriteLine("Count Down:");
+                                CountDownAndUp(enterNumber);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please enter a valid number.");
+                            }
 
-                        // Calculate the sum of an array
-                        Console.WriteLine("Calculate sum of a array:");
-                        CalculateSum();
-                        break;
-                    case 4:
-                        // Generate and print the Fibonacci sequence
-                        Console.WriteLine("Fibonacci Sequence:");
+                            break;
 
-                        int n = 10; 
+                        case 3:
 
-                        for (int i = 0; i < n; i++)
-                        {
-                            int fibonacciNumber = Fibonacci(i);
-                            Console.Write(fibonacciNumber + " ");
-                        }
+                            // Calculate the sum of an array
+                            Console.WriteLine("Calculate sum of a array:");
+                            CalculateSum();
+                            break;
 
-                        break;
-                    default:
-                        // Invalid choice
-                        Console.WriteLine("Please choose the valid number.");
-                        return;
+                        case 4:
+                            // Generate and print the Fibonacci sequence
+                            Console.WriteLine("Fibonacci Sequence:");
+
+                            int n = 10;
+
+                            for (int i = 0; i < n; i++)
+                            {
+                                int fibonacciNumber = Fibonacci(i);
+                                Console.Write(fibonacciNumber + " ");
+                            }
+                            break;
+
+                        case 5:
+                            Console.WriteLine("Exit the Application");
+                            return;
+
+                        default:
+                            // Invalid choice
+                            Console.WriteLine("Please choose the valid number.");
+                            return;
+                    }
+
+
+                }
+                else
+                {
+                    Console.WriteLine("Please choose the valid number");
                 }
             }
         }
